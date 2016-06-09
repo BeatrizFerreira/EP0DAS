@@ -1,0 +1,21 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2>Fast Food</h2>
+    <p class="lead">Os melhores combos da cidade.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <h4>Novo Pedido</h4>
+        {% block novopedido %}{% endblock %}
+    </div>
+    <div class="col-md-5">
+        <h4>Pedidos Pendentes</h4>
+        {% block pendentes %}{% endblock %}
+    </div>
+</div>
+
+{% endblock %}

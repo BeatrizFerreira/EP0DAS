@@ -1,0 +1,29 @@
+﻿{% extends "app/index.html" %}
+
+{% block novopedido %}
+<div class="row">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br/>
+        <button type="submit"><b>Save</b></button>
+    </form>
+</div>
+{% endblock %}
+
+
+{% block pendentes %}
+<div>
+    {% if pedidos.count > 0 %}
+        <ul>
+        {% for pedido in pedidos %}
+            <li>{{ pedido.nome_cliente }} - Pedido: {{ pedido.combo }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <h4>Não há pedidos.</h4>
+    {% endif%}
+
+</div>
+
+{% endblock %}
